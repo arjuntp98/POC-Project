@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//second commit
+
 @Entity
 @Table(name = "user")
 public class User {
