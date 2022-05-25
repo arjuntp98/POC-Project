@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import com.poc.shoecart.entity.Cart;
 
+//Third commit
+
 @Repository
 public interface CartRepository extends CrudRepository<Cart, Long> {
 

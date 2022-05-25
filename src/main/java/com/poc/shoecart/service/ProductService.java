@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.poc.shoecart.entity.Product;
 
+//third commit
+
 public interface ProductService {
 
 	public List<Product> getAllProducts();
@@ -15,7 +17,7 @@ public interface ProductService {
 	public Product deleteProduct(long productId) throws Exception;
 
 	// this method is calling from crud repository using @ query annotation
-	
+
 	public List<Product> getProductsByPrice(float price);
 
 	public List<Product> getProductsByBrand(String brand);
