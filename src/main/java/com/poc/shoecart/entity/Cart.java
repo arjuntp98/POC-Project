@@ -10,15 +10,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "cart")
 public class Cart {
-	
+
 	@Id
 	@Column(name = "id")
 	private long id;
-	
+
 	@OneToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-	
+
 	@OneToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
@@ -63,5 +63,5 @@ public class Cart {
 	public String toString() {
 		return "Cart [id=" + id + ", user=" + user + ", product=" + product + "]";
 	}
-	
+
 }

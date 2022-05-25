@@ -30,8 +30,7 @@ public class ProductController {
 
 		try {
 			product = productService.getAllProducts();
-		} 
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			ex.getMessage();
 		}
 
@@ -45,8 +44,7 @@ public class ProductController {
 
 		try {
 			products = productService.addOrUpdateProduct(product);
-		} 
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			ex.getMessage();
 		}
 
@@ -60,8 +58,7 @@ public class ProductController {
 
 		try {
 			product = productService.deleteProduct(productId);
-		} 
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			ex.getMessage();
 		}
 

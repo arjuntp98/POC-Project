@@ -27,8 +27,7 @@ public class ProductSearchController {
 
 		try {
 			product = productService.getProductById(productId);
-		} 
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			ex.getMessage();
 		}
 
@@ -42,8 +41,7 @@ public class ProductSearchController {
 
 		try {
 			product = productService.getProductsByPrice(price);
-		} 
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			ex.getMessage();
 		}
 
@@ -57,8 +55,7 @@ public class ProductSearchController {
 
 		try {
 			product = productService.getProductsByBrand(brand);
-		} 
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			ex.getMessage();
 		}
 

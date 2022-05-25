@@ -32,20 +32,20 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Product deleteProduct(long productId) throws Exception {
-		
+
 		Product deletedProduct = null;
-		
-			try {
-				deletedProduct = productRepository.findById(productId).orElse(null);
-				if (deletedProduct == null) {
-					throw new Exception("product not available");
-				} else {
-					productRepository.deleteById(productId);
-				}
-			} catch (Exception ex) {
-				throw ex;
+
+		try {
+			deletedProduct = productRepository.findById(productId).orElse(null);
+			if (deletedProduct == null) {
+				throw new Exception("product not available");
+			} else {
+				productRepository.deleteById(productId);
 			}
-		
+		} catch (Exception ex) {
+			throw ex;
+		}
+
 		return deletedProduct;
 	}
 
