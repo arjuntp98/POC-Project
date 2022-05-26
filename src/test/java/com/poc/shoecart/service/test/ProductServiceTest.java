@@ -90,7 +90,7 @@ public class ProductServiceTest {
 	public void test_getProductsByPrice() {
 
 		List<Product> myProducts = new ArrayList<Product>();
-		
+
 		myProducts.add(new Product(1130, "Woodland", "Brown", 9, "Formal", 1900));
 
 		when(productRepository.getProductByPrice(1900)).thenReturn(myProducts);
@@ -102,9 +102,8 @@ public class ProductServiceTest {
 	public void test_getProductsByBrand() {
 
 		List<Product> myProducts = new ArrayList<Product>();
-		
+
 		myProducts.add(new Product(1131, "Nike", "Black", 10, "Sports", 1500));
-		
 
 		when(productRepository.getProductsByBrand("Nike")).thenReturn(myProducts);
 		assertEquals(1, productServiceImpl.getProductsByBrand("Nike").size());
