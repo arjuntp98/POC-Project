@@ -19,7 +19,7 @@ import com.poc.shoecart.service.UserService;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-
+	
 	@Autowired
 	private UserService userService;
 

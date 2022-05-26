@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "cart")
 public class Cart {
-
+	
 	@Id
 	@Column(name = "id")
 	private long id;

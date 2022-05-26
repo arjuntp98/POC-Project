@@ -28,51 +28,51 @@ public class UserServiceTest {
 	@InjectMocks
 	UserServiceImpl userServiceImpl;
 	
-	public List<User> myusers;
+	public List<User> myUsers;
 	
 	@Test
 	public void test_getallUsers() {
-		List<User> myusers = new ArrayList<User>();
-		myusers.add(new User(1,"Kiran","9878456512"));
-		myusers.add(new User(2,"Balu","8978456521"));
+		List<User> myUsers = new ArrayList<User>();
+		myUsers.add(new User(130,"Kiran","9878456512"));
+		myUsers.add(new User(132,"Balu","8978456521"));
 		
-		when(userRepository.findAll()).thenReturn(myusers);
+		when(userRepository.findAll()).thenReturn(myUsers);
 		assertEquals(2,userServiceImpl.getallUsers().size());
 	}
 	
 	@Test
 	public void test_getUserById() {
 		
-	    User myusers = new User();
-		myusers.setUserId(1);
-		myusers.setName("Karan");
-		myusers.setMobileNumber("9878784512");
+	    User myUsers = new User();
+	    myUsers.setUserId(130);
+	    myUsers.setName("Karan");
+	    myUsers.setMobileNumber("9878784512");
 		
-		when(userRepository.findById(1L)).thenReturn(Optional.of(myusers));
-		assertEquals(1L,userServiceImpl.getUserById(1L).getUserId());
+		when(userRepository.findById(130L)).thenReturn(Optional.of(myUsers));
+		assertEquals(130L,userServiceImpl.getUserById(130L).getUserId());
 	}
 
 	@Test
 	public void test_addOrUpdateUser() {
 		
-		User myusers = new User();
-		myusers.setUserId(1);
-		myusers.setName("Karan");
-		myusers.setMobileNumber("9878784512");
+		User myUsers = new User();
+		myUsers.setUserId(130);
+		myUsers.setName("Karan");
+		myUsers.setMobileNumber("9878784512");
 		
-		when(userRepository.save(myusers)).thenReturn(myusers);
-		assertEquals(myusers,userServiceImpl.addOrUpdateUser(myusers));
+		when(userRepository.save(myUsers)).thenReturn(myUsers);
+		assertEquals(myUsers,userServiceImpl.addOrUpdateUser(myUsers));
 	}	
 	
 	@Test
 	public void test_deleteUser(){
-		User myusers = new User();
-		myusers.setUserId(1);
-		myusers.setName("Karan");
-		myusers.setMobileNumber("9878784512");
+		User myUsers = new User();
+		myUsers.setUserId(30);
+		myUsers.setName("Karan");
+		myUsers.setMobileNumber("9878784512");
 		
-		userRepository.deleteById(1L);
-		verify(userRepository,times(1)).deleteById(1L);
+		userRepository.deleteById(130L);
+		verify(userRepository,times(1)).deleteById(130L);
 		
 	}
 	

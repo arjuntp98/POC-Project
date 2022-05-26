@@ -30,6 +30,7 @@ public class CartController {
 
 		try {
 			cartItem = cartService.getCartByUserIdAndProductId(userId, productId);
+			
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
@@ -43,6 +44,7 @@ public class CartController {
 
 		try {
 			cartItem = cartService.addToCart(cart.getUser().getUserId(), cart.getProduct().getProductId());
+			
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
