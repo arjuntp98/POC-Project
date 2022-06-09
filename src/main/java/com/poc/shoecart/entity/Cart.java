@@ -65,4 +65,5 @@ public class Cart {
 		return "Cart [id=" + id + ", user=" + user + ", product=" + product + "]";
 	}
 
+	
 }
