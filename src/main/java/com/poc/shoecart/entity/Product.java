@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -33,16 +33,17 @@ public class Product {
 	@Column(name = "price")
 	private float price;
 	
-	@ManyToOne
-	@JoinColumn(name="cart_id")
-	private Cart cart;
+	//@ManyToOne
+	//@JoinColumn(name="cart_id")
+	//private Cart cart;
+
 
 	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(long productId, String brand, String color, int size, String category, float price, Cart cart) {
+	public Product(long productId, String brand, String color, int size, String category, float price) {
 		super();
 		this.productId = productId;
 		this.brand = brand;
@@ -50,7 +51,6 @@ public class Product {
 		this.size = size;
 		this.category = category;
 		this.price = price;
-		this.cart = cart;
 	}
 
 	public long getProductId() {
@@ -101,19 +101,10 @@ public class Product {
 		this.price = price;
 	}
 
-	public Cart getCart() {
-		return cart;
-	}
-
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
-
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", brand=" + brand + ", color=" + color + ", size=" + size
-				+ ", category=" + category + ", price=" + price + ", cart=" + cart + "]";
+				+ ", category=" + category + ", price=" + price + "]";
 	}
-
 	
 }

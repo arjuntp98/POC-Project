@@ -1,6 +1,8 @@
 package com.poc.shoecart.entity;
 
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,19 +23,23 @@ public class Cart {
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	@OneToMany(mappedBy = "cart")
-	private List<Product> product;
+	//@OneToMany(mappedBy = "cart")
+	//private List<Product> product;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "cart_id", referencedColumnName = "id")
+	private List<Product> products;
 
 	public Cart() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cart(long id, User user, List<Product> product) {
+	public Cart(long id, User user, List<Product> products) {
 		super();
 		this.id = id;
 		this.user = user;
-		this.product = product;
+		this.products = products;
 	}
 
 	public long getId() {
@@ -52,18 +58,17 @@ public class Cart {
 		this.user = user;
 	}
 
-	public List<Product> getProduct() {
-		return product;
+	public List<Product> getProducts() {
+		return products;
 	}
 
-	public void setProduct(List<Product> product) {
-		this.product = product;
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 
 	@Override
 	public String toString() {
-		return "Cart [id=" + id + ", user=" + user + ", product=" + product + "]";
+		return "Cart [id=" + id + ", user=" + user + ", products=" + products + "]";
 	}
 
-	
 }
