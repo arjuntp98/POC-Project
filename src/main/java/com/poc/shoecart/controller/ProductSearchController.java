@@ -23,42 +23,42 @@ public class ProductSearchController {
 	@GetMapping("/byId/{id}")
 	public ResponseEntity<Product> getProductsById(@PathVariable("id") long productId) {
 
-		Product product = null;
+		Product products = null;
 
 		try {
-			product = productService.getProductById(productId);
+			products = productService.getProductById(productId);
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
 
-		return new ResponseEntity<Product>(product, HttpStatus.OK);
+		return new ResponseEntity<Product>(products, HttpStatus.OK);
 	}
 
 	@GetMapping("/byPrice/{price}")
 	public ResponseEntity<List<Product>> getAllProductsByPrice(@PathVariable("price") float price) {
 
-		List<Product> product = null;
+		List<Product> products = null;
 
 		try {
-			product = productService.getProductsByPrice(price);
+			products = productService.getProductsByPrice(price);
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
 
-		return new ResponseEntity<List<Product>>(product, HttpStatus.OK);
+		return new ResponseEntity<List<Product>>(products, HttpStatus.OK);
 	}
 
 	@GetMapping("/byBrand/{brand}")
 	public ResponseEntity<List<Product>> getAllProductsByBrand(@PathVariable("brand") String brand) {
 
-		List<Product> product = null;
+		List<Product> products = null;
 
 		try {
-			product = productService.getProductsByBrand(brand);
+			products = productService.getProductsByBrand(brand);
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
 
-		return new ResponseEntity<List<Product>>(product, HttpStatus.OK);
+		return new ResponseEntity<List<Product>>(products, HttpStatus.OK);
 	}
 }

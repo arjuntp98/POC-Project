@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,13 +32,17 @@ public class Product {
 
 	@Column(name = "price")
 	private float price;
+	
+	@ManyToOne
+	@JoinColumn(name="cart_id")
+	private Cart cart;
 
 	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(long productId, String brand, String color, int size, String category, float price) {
+	public Product(long productId, String brand, String color, int size, String category, float price, Cart cart) {
 		super();
 		this.productId = productId;
 		this.brand = brand;
@@ -44,13 +50,14 @@ public class Product {
 		this.size = size;
 		this.category = category;
 		this.price = price;
+		this.cart = cart;
 	}
 
 	public long getProductId() {
 		return productId;
 	}
 
-	public void setProductId(int productId) {
+	public void setProductId(long productId) {
 		this.productId = productId;
 	}
 
@@ -94,10 +101,19 @@ public class Product {
 		this.price = price;
 	}
 
-	@Override
-	public String toString() {
-		return "Products [productId=" + productId + ", brand=" + brand + ", color=" + color + ", size=" + size
-				+ ", category=" + category + ", price=" + price + "]";
+	public Cart getCart() {
+		return cart;
 	}
 
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", brand=" + brand + ", color=" + color + ", size=" + size
+				+ ", category=" + category + ", price=" + price + ", cart=" + cart + "]";
+	}
+
+	
 }

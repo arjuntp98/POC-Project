@@ -26,27 +26,27 @@ public class UserController {
 	@GetMapping("/allUsers")
 	public ResponseEntity<List<User>> getAllUsers() {
 
-		List<User> user = null;
+		List<User> users = null;
 
 		try {
-			user = userService.getallUsers();
+			users = userService.getallUsers();
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
-		return new ResponseEntity<List<User>>(user, HttpStatus.OK);
+		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
 
 	@GetMapping("/getUserById/{id}")
 	public ResponseEntity<User> getUserById(@PathVariable("id") long userId) {
 
-		User user = null;
+		User users = null;
 
 		try {
-			user = userService.getUserById(userId);
+			users = userService.getUserById(userId);
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
-		return new ResponseEntity<User>(user, HttpStatus.OK);
+		return new ResponseEntity<User>(users, HttpStatus.OK);
 
 	}
 
@@ -68,13 +68,13 @@ public class UserController {
 	@DeleteMapping("/deleteUser/{id}")
 	public ResponseEntity<User> deleteUser(@PathVariable("id") long userId) {
 
-		User user = null;
+		User users = null;
 
 		try {
-			user = userService.deleteUser(userId);
+			users = userService.deleteUser(userId);
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
-		return new ResponseEntity<User>(user, HttpStatus.OK);
+		return new ResponseEntity<User>(users, HttpStatus.OK);
 	}
 }

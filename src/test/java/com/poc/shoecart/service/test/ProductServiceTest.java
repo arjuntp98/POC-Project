@@ -5,8 +5,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
@@ -26,7 +26,7 @@ public class ProductServiceTest {
 
 	@InjectMocks
 	ProductServiceImpl productServiceImpl;
-
+/*
 	@Test
 	public void test_getAllProducts() {
 
@@ -38,7 +38,7 @@ public class ProductServiceTest {
 		assertEquals(2, productServiceImpl.getAllProducts().size());
 
 	}
-
+*/
 	@Test
 	public void test_getProductById() {
 
@@ -85,7 +85,7 @@ public class ProductServiceTest {
 		productRepository.deleteById(1130L);
 		verify(productRepository, times(1)).deleteById(1130L);
 	}
-
+/*
 	@Test
 	public void test_getProductsByPrice() {
 
@@ -109,4 +109,5 @@ public class ProductServiceTest {
 		assertEquals(1, productServiceImpl.getProductsByBrand("Nike").size());
 
 	}
+	*/
 }
