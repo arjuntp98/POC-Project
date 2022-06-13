@@ -1,16 +1,9 @@
 package com.poc.shoecart.service.impl;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.poc.shoecart.entity.Cart;
-import com.poc.shoecart.entity.Product;
-import com.poc.shoecart.entity.User;
 import com.poc.shoecart.repository.CartRepository;
-import com.poc.shoecart.repository.ProductRepository;
-import com.poc.shoecart.repository.UserRepository;
 import com.poc.shoecart.service.CartService;
 
 @Service
@@ -19,16 +12,20 @@ public class CartServiceImpl implements CartService {
 	@Autowired
 	private CartRepository cartRepository;
 
+	@Override
+	public Cart getCartByUserId(long userId) {
+		return cartRepository.getCartByUserId(userId);
+	}
+
+/*
+	
 	@Autowired
 	private UserRepository userRepository;
 
 	@Autowired
 	private ProductRepository productRepository;
 
-	@Override
-	public Cart getCartByUserIdAndProductId(long userId, long productId) {
-		return cartRepository.getCartByUserIdAndProductId(userId, productId);
-	}
+	
 
 	@Override
 	public Cart addToCart(long userId, long productId) {
@@ -48,4 +45,5 @@ public class CartServiceImpl implements CartService {
 		return cartRepository.save(cart);
 	}
 
+*/
 }
