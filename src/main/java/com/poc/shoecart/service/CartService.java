@@ -1,7 +1,7 @@
 package com.poc.shoecart.service;
 
 import com.poc.shoecart.entity.Cart;
-
+//sample commit
 public interface CartService {
 
 	public Cart getCartByUserId(long userId);
